@@ -2,8 +2,7 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from flask_session import Session
 from werkzeug.exceptions import default_exceptions
 from cs50 import SQL
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
+
 
 app = Flask(__name__)
 
@@ -22,8 +21,5 @@ def book():
         flight_id = int(request.form.get("flight_id"))
     except ValueError:
         return render_template("error.html", message="Invalid flight number.")
-
-    db.execute("INSERT INTO passengers (name, flight_id) VALUES (:name, :flight_id)",
-            name = name, flight_id =flight_id )
 
     return render_template("success.html")
