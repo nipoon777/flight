@@ -5,7 +5,7 @@ from cs50 import SQL
 
 app = Flask(__name__)
 
-db = SQL("sqlite:///flight.db")
+db = SQL("postgres://iwcuuvojalcppu:300be0bc205b34207dbbd18218b8155c0fa69730eeb0497ef1bca3670a34b834@ec2-54-235-86-101.compute-1.amazonaws.com:5432/d2d3alomvpcnov")
 
 @app.route("/")
 def index():
